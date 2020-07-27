@@ -26,8 +26,10 @@ Things you may want to cover:
 ## usersテーブル
 | Column | Type | Options |
 | ------ | ---- | ------- |
-|name|string|null: false|
-|name_alias|string|null: false|
+|firstname|string|null: false|
+|lastname|string|null: false|
+|firstname_alias|string|null: false|
+|lastname_alias|string|null: false|
 |nickname|string|null: false|
 |email|string|null: false|
 |birthday|date|null: false|
@@ -35,12 +37,12 @@ Things you may want to cover:
 - has_many :exhibitions
 - has_many :purchases
 - has_many :comments
-- belongs_to :addresses
+
 
 ## exhibitionsテーブル
 | Column | Type | Options |
 | ------ | ---- | ------- |
-|item|string|null: false|
+|name|string|null: false|
 |image|string|null: false|
 |price|integer|null: false|
 |about|text|null: false|
@@ -51,9 +53,9 @@ Things you may want to cover:
 |days|string|null: false|
 ### Association
 - has_many :comments
-- belongs_to :users
-- belongs_to :purchases
-- belongs_to :addresses
+- belongs_to :user
+- has_many :purchases
+- has_one  :addresses
 
 ## purchasesテーブル
 | Column | Type | Options |
@@ -61,25 +63,21 @@ Things you may want to cover:
 |user|references|null: false, foreign_key: true|
 |exhibition|references|null: false, foreign_key: true|
 ### Association
-- has_many :comments
 - belongs_to :users
 - belongs_to :exhibitions
-- belongs_to :addresses
+
 
 ## addressesテーブル
 | Column | Type | Options |
 | ------ | ---- | ------- |
-|postal_code|integer|null: false|
+|postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|address|integer|null: false|
+|address|string|null: false|
 |building|string|
-|tel|integer|null: false|
+|tel|string|null: false|
 ### Association
-- has_many :comments
-- belongs_to :users
-- belongs_to :exhibitions
-- belongs_to :purchases
+- belongs_to :exhibition
 
 ## commentsテーブル
 | Column | Type | Options |
@@ -88,7 +86,7 @@ Things you may want to cover:
 |exhibition|references|null: false, foreign_key: true|
 |content|text|null: false|
 ### Association
-- belongs_to :users
-- belongs_to :exhibitions
-- belongs_to :purchases
-- belongs_to :addresses
+- belongs_to :user
+- belongs_to :exhibition
+- belongs_to :purchase
+- belongs_to :address

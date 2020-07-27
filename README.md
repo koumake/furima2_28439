@@ -85,7 +85,7 @@ Things you may want to cover:
 |user|references|null: false, foreign_key: true|
 |exhibition|references|null: false, foreign_key: true|
 |content|text|null: false|
-### Association
+## Association
 - belongs_to :user
 - belongs_to :exhibition
 - belongs_to :purchase

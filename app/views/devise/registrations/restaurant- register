@@ -1,0 +1,28 @@
+<div class="restaurant-resigter">
+  <h2>レストラン新規登録（レストラン情報入力）</h2>
+  <div class="basic-information">
+    <div class="restaurant-information">
+    </div>
+    <div class="address-information">
+    </div>
+    <div class="gunre-information">
+    </div>
+  </div>
+  <div class="detail-information">
+    <div class="reservation-information">
+    </div>
+    <div class="traffic-hours-holiday-information">
+    </div>
+    <div class="bugget-information">
+    </div>
+    <div class="seat-facility-information">
+    </div>
+    <div class="menu-information">
+    </div>
+    <div class="feature-information">
+    </div>
+  </div>
+  <div class="btn-contents">
+    <登録する>
+  </div>
+</div>
